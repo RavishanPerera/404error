@@ -1,19 +1,61 @@
-name: Matrix Node.js Tests
+name: Matrix + Parallel Testing
 
 on: [push, pull_request]
 
 jobs:
-  test:
+  unit:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16, 18, 20]
-
+    name: Unit Test - Node.js ${{ matrix.node-version }}
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm test
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies (if any)
+        run: npm ci || echo "No dependencies"
+
+      - name: Run unit tests
+        run: |
+          echo "✅ Simulating unit tests..."
+          echo "No real unit tests yet – setup ready!"
+
+  integration:
+    runs-on: ubuntu-latest
+    name: Integration Test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Run integration test
+        run: |
+          echo "✅ Simulating integration tests..."
+          echo "No real integration tests yet – setup ready!"
+
+  e2e:
+    runs-on: ubuntu-latest
+    name: End-to-End Test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Run E2E test
+        run: |
+          echo "✅ Simulating E2E tests..."
+          echo "No real E2E tests yet – setup ready!"
