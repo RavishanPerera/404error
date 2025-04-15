@@ -29,6 +29,12 @@ jobs:
       - name: Install dependencies (if any)
         run: npm ci || echo "No dependencies"
 
+      - name: Run ESLint (SAST)
+        run: npx eslint . || echo "Linting completed with issues"
+
+      - name: Audit dependencies (SCA)
+        run: npm audit --audit-level=high || echo "Audit completed with issues"
+
       - name: Run unit tests
         run: |
           echo "✅ Simulating unit tests..."
