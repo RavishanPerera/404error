@@ -3,13 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>404 Tracker</title>
-<script src="https://browser.sentry-cdn.com/7.63.0/bundle.tracing.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
-<script>
-  Sentry.init({
-    dsn: 'https://your-dsn@sentry.io/project-id',
-    tracesSampleRate: 1.0,
-  });
-</script>
+
+  <!-- Sentry for error tracking -->
+  <script src="https://browser.sentry-cdn.com/7.63.0/bundle.tracing.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+  <script>
+    Sentry.init({
+      dsn: 'https://your-dsn@sentry.io/project-id',
+      tracesSampleRate: 1.0,
+    });
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBK9QXVT4Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NBK9QXVT4Y'); // Replace with your actual GA tracking ID
+  </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
