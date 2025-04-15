@@ -18,6 +18,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies (if any)
         run: npm ci || echo "No dependencies"
 
@@ -38,6 +46,17 @@ jobs:
         with:
           node-version: 18
 
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies (if any)
+        run: npm ci || echo "No dependencies"
+
       - name: Run integration test
         run: |
           echo "✅ Simulating integration tests..."
@@ -54,6 +73,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies (if any)
+        run: npm ci || echo "No dependencies"
 
       - name: Run E2E test
         run: |
