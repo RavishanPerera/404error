@@ -14,4 +14,4 @@ jobs:
       - name: ZAP Full Scan
         uses: zaproxy/action-full-scan@v0.10.0
         with:
-          target: 'https://your-live-site.com'  
+          target: 'https://ravishanperera.github.io'
