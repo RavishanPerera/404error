@@ -14,4 +14,4 @@ jobs:
       - name: ZAP Full Scan
         uses: zaproxy/action-full-scan@v0.10.0
         with:
-          target: ''
+          target: 'https://github.com/RavishanPerera/404error.git'
