@@ -8,7 +8,7 @@
   <script src="https://browser.sentry-cdn.com/7.63.0/bundle.tracing.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
   <script>
     Sentry.init({
-      dsn: 'https://your-dsn@sentry.io/project-id',
+      dsn: 'https://your-dsn@sentry.io/project-id', // Replace with your actual DSN
       tracesSampleRate: 1.0,
     });
   </script>
@@ -89,7 +89,6 @@
 </div>
 
 <script>
-  // Simulate a log of the error
   function log404Error() {
     const errorData = {
       url: window.location.href,
@@ -97,13 +96,28 @@
       userAgent: navigator.userAgent
     };
 
-    // Log to console (you can later replace this with fetch to send to a real endpoint)
+    // Log to the console
     console.warn('🚨 404 Tracked:', errorData);
 
-    document.getElementById('log-status').textContent = "This 404 error has been logged in the console.";
+    // Send to Sentry with custom tag for filtering/alerting
+    Sentry.captureMessage("404 Not Found", {
+      level: 'warning',
+      tags: {
+        type: 'client-404',
+        page: window.location.pathname,
+      },
+    });
+
+    // Optionally add breadcrumb for tracing
+    Sentry.addBreadcrumb({
+      category: '404',
+      message: 'User encountered a 404 page',
+      level: 'info',
+    });
+
+    document.getElementById('log-status').textContent = "This 404 error has been logged in the console and Sentry.";
   }
 
-  // Simulate navigating to another broken page
   function simulateNavigation() {
     alert("Simulated navigation to /missing-page.html. Re-logging 404...");
     log404Error();
