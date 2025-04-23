@@ -1,8 +1,8 @@
-# 🙌 Contributing Guidelines
+#  Contributing Guidelines
 
 Thanks for contributing to 404 Tracker!
 
-## 🛠 Setup
+## Setup
 
 ```bash
 npm install
