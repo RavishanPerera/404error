@@ -4,5 +4,5 @@
 ##  Documentation
 
 [Project Overview]-docs/overview.md
-[Setup Guide]-
+[Setup Guide]-docs/setup.md
 [Development Workflow]-docs/development-workflow.md
