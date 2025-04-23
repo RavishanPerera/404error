@@ -1,6 +1,6 @@
-## 📝 Pull Request
+# Pull Request
 
-### What does this PR do?
+# What does this PR do?
 > _Briefly describe the change or feature._
 
 ### Type of Change
