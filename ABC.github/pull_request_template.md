@@ -4,11 +4,11 @@
 > _Briefly describe the change or feature._
 
 ### Type of Change
-- [ ] 🐛 Bug fix
-- [ ] ✨ New feature
-- [ ] 🔧 Code refactor
-- [ ] 🧹 Cleanup
-- [ ] ✅ Tests
+- [ ]  Bug fix
+- [ ]  New feature
+- [ ]  Code refactor
+- [ ]  Cleanup
+- [ ]  Tests
 
 ### Checklist
 - [ ] Code follows style guidelines
