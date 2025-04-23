@@ -1,7 +1,7 @@
 ---
 name: Feature Request
 about: Suggest a new idea for 404 Tracker
-title: "✨ Feature: "
+title: " Feature: "
 labels: enhancement
 ---
 
