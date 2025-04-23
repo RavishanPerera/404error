@@ -1,7 +1,7 @@
 ---
 name: Bug Report
 about: Report a bug in the 404 Tracker
-title: "🐛 Bug: "
+title: " Bug: "
 labels: bug
 ---
 
