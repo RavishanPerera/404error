@@ -1,7 +1,7 @@
 ---
 name: Technical Debt
 about: Note technical debt for future cleanup
-title: "🛠️ Tech Debt: "
+title: " Tech Debt: "
 labels: tech-debt
 ---
 
