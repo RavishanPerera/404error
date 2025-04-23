@@ -7,5 +7,5 @@ This guide explains how to set up and configure the 404 Tracker project across *
  1. Clone the Repository
 
 ```bash
-git clone 
+git clone https://github.com/RavishanPerera/404error.git
 cd 404-tracker
