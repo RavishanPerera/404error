@@ -7,5 +7,5 @@ This tutorial helps you clone, run, and customize the 404 Tracker project on you
 ## 1. Clone the Repository
 
 ```bash
-git clone 
+git clone https://github.com/RavishanPerera/404error.git
 cd 404-tracker
